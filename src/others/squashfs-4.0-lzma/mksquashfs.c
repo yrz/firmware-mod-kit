@@ -122,6 +122,9 @@ int fd;
 int cur_uncompressed = 0, estimated_uncompressed = 0;
 int columns;
 
+
+void add_dir_entry(char *name, char *pathname, struct dir_info *sub_dir, struct inode_info *inode_info, void *data, struct dir_info *dir);
+
 /* filesystem flags for building */
 int duplicate_checking = 1, noF = 0, no_fragments = 0, always_use_fragments = 0;
 int noI = 0, noD = 0;

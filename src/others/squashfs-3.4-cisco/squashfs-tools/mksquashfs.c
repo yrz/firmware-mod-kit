@@ -118,7 +118,9 @@ int gLzmaEnable=1;
 /* filesystem flags for building */
 int duplicate_checking = 1, noF = 0, no_fragments = 0, always_use_fragments = 0;
 int noI = 0, noD = 0, check_data = 0;
-int swap, silent = TRUE;
+//int swap, silent = TRUE;
+static int swap;
+int silent = TRUE;
 long long global_uid = -1, global_gid = -1;
 int exportable = TRUE;
 int progress = TRUE;
@@ -155,6 +157,9 @@ unsigned int cache_bytes = 0, cache_size = 0, inode_count = 0;
 
 /* inode lookup table */
 squashfs_inode *inode_lookup_table = NULL;
+
+
+void add_dir_entry(char *name, char *pathname, struct dir_info *sub_dir, struct inode_info *inode_info, void *data, struct dir_info *dir);
 
 /* in memory directory data */
 #define I_COUNT_SIZE		128

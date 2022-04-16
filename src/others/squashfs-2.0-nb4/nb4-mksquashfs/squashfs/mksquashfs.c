@@ -144,7 +144,9 @@ struct directory {
 struct file_info *dupl[65536], *frag_dups[65536];
 int dup_files = 0;
 
-int swap, silent = TRUE;
+//int swap, silent = TRUE;
+static int swap;
+int silent = TRUE;
 int file_count = 0, sym_count = 0, dev_count = 0, dir_count = 0, fifo_count = 0, sock_count = 0;
 
 /* list of exclude dirs/files */

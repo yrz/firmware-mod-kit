@@ -14,6 +14,8 @@
 #include "common.h"
 #include "webdecomp.h"
 
+struct global globals;
+
 int main(int argc, char *argv[])
 {
 	char *httpd = NULL, *www = NULL, *dir = NULL;
@@ -198,7 +200,7 @@ void detect_key(char *httpd, char *www)
 	}
 	else
 	{
-		fprintf(stderr, "WARNING: Failed to determine key based on %d entries with a total size of %d / %d\n", total_entries, total_size, wsize);
+		fprintf(stderr, "WARNING: Failed to determine key based on %d entries with a total size of %d / %ld\n", total_entries, total_size, wsize);
 		globals.key = 0;
 	}
 
